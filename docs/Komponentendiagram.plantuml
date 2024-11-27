@@ -1,0 +1,27 @@
+@startuml Komponentendiagramm
+
+package "GUI" {
+    [Wahl-Frame] ..> [Ausgabe-Frame] : modifiziert
+    [Ausgabe-Frame] <.. [Fenster_Deckungsbeiträge] : wird erstellt in
+
+}
+
+
+package "Controller" {
+    [Fenster_Deckungsbeiträge] --> [Controller-Deckungsbeiträge] : greift zu
+}
+
+package "Modell" {
+[Controller-Deckungsbeiträge] --> [Klasse_Deckungsbeiträge] : greift zu
+
+
+}
+
+database "SQLite" {
+    [Controller-Deckungsbeiträge] --> [Statistik] : modifiziert
+    [Wahl-Frame] --> [Statistik] : ruft auf
+
+}
+
+    
+@enduml

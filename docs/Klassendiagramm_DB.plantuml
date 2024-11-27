@@ -1,0 +1,33 @@
+@startuml Klassendiagramm
+skinparam ClassAttributeIconSize 0
+
+class RA_Deckungsbeitrag {
+    - kosten_fix
+    - kosten_variable
+    - erloes
+    - menge
+    
+    + get_kosten_fix()
+    + get_kosten_variable()
+    + get_erloes()
+    + get_menge()
+    + get_selbstkosten()
+    + get_deckungsbeitrag()
+    + get_break_even
+
+    - calculate_selbstkosten()
+    - calculate_deckungsbeitrag()
+    - calculate_break_even()
+}
+
+
+class Contoller_Deckungsbeitrag {
+    + aufgabe
+
+    + check_selbstkosten()
+    + check_deckungsbeitrag()
+    + check_break_even()
+    - get_values()
+
+}
+@enduml
